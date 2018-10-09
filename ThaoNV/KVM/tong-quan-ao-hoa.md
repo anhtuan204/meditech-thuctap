@@ -29,7 +29,7 @@ Tuy nhiên vẫn còn đó một vài những hạn chế trong việc quản l�
 Trên mỗi máy ảo có hệ điều hành riêng giống như 01 máy chủ thật và được triển khai các môi trường, 
 ứng dụng khác nhau để phù hợp với hoạt động và mục đích của doanh nghiệp.
 
-<img src="http://i.imgur.com/vGNtn6N.jpg">
+<img src="https://i.imgur.com/vGNtn6N.jpg">
 
 ### <a name="chuc-nang"> </a> 2. Chức năng và lợi ích của ảo hóa
 
@@ -37,18 +37,20 @@ Trên mỗi máy ảo có hệ điều hành riêng giống như 01 máy chủ t
 - Phân chia: Với công nghệ ảo hóa, chúng ta có thể chạy nhiều máy ảo trên một máy thật với nhiều hệ điều hành khác nhau, nhờ thế mà 
 ta cũng có thể tách từng dịch vụ ra để cài trên từng máy ảo.
 
-<img src="http://i.imgur.com/FX3XCiV.png">
+<img src="https://i.imgur.com/FX3XCiV.png">
 
 - Cô lập: Khi mỗi dịch vụ quan trọng được cài trên một máy ảo khác nhau thì nếu có sự cố, các dịch vụ khác cũng không bị ảnh hưởng gì.
 Thêm vào đó, nó cũng giúp người dùng quản lí tốt hơn tài nguyên trên các máy ảo.
 
-<img src ="http://i.imgur.com/Hkk3ZiO.png">
+<img src ="https://i.imgur.com/Hkk3ZiO.png">
 
 - Đóng gói: Với công nghệ ảo hóa, các máy ảo được đóng gói thành các file riêng biệt, nhờ vậy mà nó có thể dễ dàng được sao chép
  để backup và di chuyển sang các hệ thống khác để chạy.
 
- <img src ="http://i.imgur.com/KTnBnfO.png">
+ <img src ="https://i.imgur.com/KTnBnfO.png">
 
+
+ 
  ** Những lợi ích chính mà ảo hóa mang lại **
 
  - Giảm chi phí về hạ tầng IT và quản trị hệ thống: ảo hóa giúp tạo nhiều máy chủ ảo, khai thác triệt để tài nguyên vật lý của máy chủ, 
@@ -59,18 +61,4 @@ Thêm vào đó, nó cũng giúp người dùng quản lí tốt hơn tài nguy�
  dự phòng, di chuyển máy ảo.
 
  ### <a name = "cong-nghe"></a> 3. Lựa chọn công nghệ ảo hóa phù hợp
-
-- Ảo hóa có 2 loại chính đó là:
-  <ul>
-  <li>Dedicated virtualization (Bare-Metal Hypervisor): Hypervisor tương tác trực tiếp với phần cứng của máy chủ để quản lý, phân phối và cấp phát tài nguyên.
-   Loại ảo hóa này bao gồm các giải pháp như Vmware ESXi, Microsoft Hyper-V, Xen Server, KVM.</li>
-  <li>Hosted Architecture: Đây là loại ảo hóa Hypervisor giao tiếp với phần cứng thông qua hệ điều hành. 
-  Hypervisor lúc này được xem như một ứng dụng của hệ điều hành và các phương thức quản lý, 
-  cấp phát tài nguyên đều phải thông qua hệ điều hành. 
-  Loại ảo hóa này bao gồm các giải pháp như Vmware WorkStation, Oracle VirtualBox, Microsoft Virtual PC, …</li>
-  </ul>
-  - Vì ở loại thứ 1, Hypervisor tương tác trực tiếp với phần cứng nên việc quản lý và phân phối tài nguyên được tối ưu và 
-  hiệu quả hơn so với loại 02, vì vậy khi triển khai trong thực tế, ảo hóa Loại 01 (Bare-Metal Hypervisor) được sử dụng, 
-  loại 02 chỉ sử dụng trong các trường hợp thử nghiệm, hoặc mục đích học tập.
-
-  <img src ="http://i.imgur.com/x57HzRc.png">
+![](https://i.imgur.com/Zw4DbaD.png)
