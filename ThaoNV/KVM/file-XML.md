@@ -19,7 +19,7 @@
 - Ngoài domain XML, KVM cũng có các file XML khác để lưu các thông tin liên quan tới network, storage...
 - Ví dụ của domain xml:
 
-<img src="http://i.imgur.com/7Uclwv5.png">
+<img src="https://i.imgur.com/7Uclwv5.png">
 
 ### <a name= "thanh-phan"> 2. Các thành phần trong file domain XML </a>
 
@@ -27,7 +27,7 @@
 
 #### Metadata
 
-<img src="http://i.imgur.com/3YJxNDG.png">
+<img src="https://i.imgur.com/3YJxNDG.png">
 
 - `name` : Tên máy ảo, chỉ bao gồm kí tự chữ và số và không được trùng với những máy ảo đang chạy.
 - `uuid` : Mã nhận dạng quốc tế duy nhất cho máy ảo. Format theo RFC 4122. Nếu thiếu trường uuid khi khởi tạo, mã này sẽ được tự động generate.
@@ -43,7 +43,7 @@
 
 - Boot thông qua BIOS được hỗ trợ bởi những hypervisors full virtualization. Người dùng sẽ phải thiết lập thứ tự ưu tiên các thiết bị boot.
 
-<img src="http://i.imgur.com/13r0mcN.png">
+<img src="https://i.imgur.com/13r0mcN.png">
 
 - `type` : Chỉ ra loại OS được boot để tạo thành VM. `hvm` cho biết OS cần chạy trên "bare metal", yêu cầu full virtualization. `arch` chỉ ra loại kiến trúc CPU dùng để ảo hóa, `machine` chỉ la loại máy sử dụng.
 - `boot` : `dev` chỉ ra thiết bị dùng để khởi động. Nó có thể là `fd`, `hd`, `cdrom` hoặc `network`. Nếu có nhiều thiết bị được khai báo, nó sẽ được sắp xếp làm thứ tự ưu tiên.
@@ -52,7 +52,7 @@
 
 **Direct kernel boot**
 
-<img src="http://i.imgur.com/5mhTKYx.png">
+<img src="https://i.imgur.com/5mhTKYx.png">
 
 - `loader` : `readonly` có giá trị `yes` hoặc `no` chỉ ra file image writable hay readonly. `type` có giá trị `rom` hoặc `pflash` chỉ ra nơi guest memory được kết nối.
 - `kernel` : đường dẫn tới kernel image trên hệ điều hành máy chủ
@@ -61,7 +61,7 @@
 
 #### CPU Allocation
 
-<img src="http://i.imgur.com/7bmcuzn.png">
+<img src="https://i.imgur.com/7bmcuzn.png">
 
 **vcpu**
 
@@ -75,7 +75,7 @@
 
 #### Memory Allocation
 
-<img src="http://i.imgur.com/FnnpqXC.png">
+<img src="https://i.imgur.com/FnnpqXC.png">
 
 **memory**
 
@@ -86,7 +86,7 @@
 
 #### Events configuration
 
-<img src="http://i.imgur.com/0fi8Vne.png">
+<img src="https://i.imgur.com/0fi8Vne.png">
 
 - `on_poweroff` : Hành động được thực hiện khi người dùng yêu cầu tắt máy
 - `on_reboot`: Hành động được thực hiện khi người dùng yêu cầu reset máy
@@ -109,7 +109,7 @@
 
 #### Hypervisor features
 
-<img src="http://i.imgur.com/CGMbPMb.png">
+<img src="https://i.imgur.com/CGMbPMb.png">
 
 - `pae` : Chế độ mở rộng địa chỉ vật lí cho phép sử dụng 32 bit để lưu trữ tới hơn 4GB bộ nhớ.
 - `acpi` : Được sử dụng để quản lí nguồn điện
@@ -120,7 +120,7 @@
 
 **Clock**
 
-<img src="http://i.imgur.com/ZtRqYNb.png">
+<img src="https://i.imgur.com/ZtRqYNb.png">
 
 - `offset` : giá trị `utc`, `localtime`, `timezone` và `variable`
 
@@ -128,7 +128,7 @@
 
 **emulator**
 
-<img src = "http://i.imgur.com/oF6iyrE.png">
+<img src = "https://i.imgur.com/oF6iyrE.png">
 
 - Đường dẫn tới thiết bị mô phỏng nhị phân. Trong KVM, đó là `/usr/bin/kvm`
 
@@ -136,7 +136,7 @@
 
 **1. Disk**
 
-<img src="http://i.imgur.com/X3Vq6fi.png">
+<img src="https://i.imgur.com/X3Vq6fi.png">
 
 - `disk` : Mô tả ổ đĩa, bao gồm các giá trị:
   <ul>
@@ -170,7 +170,7 @@
   
 **2. Controller**
 
-<img src="http://i.imgur.com/AsSZMgr.png">
+<img src="https://i.imgur.com/AsSZMgr.png">
 
 - Tùy thuộc vào cấu trúc của máy ảo mà nó có thể có các thiết bị ảo đi kèm, mỗi cái lại đi theo một bộ điều khiển. Thường thì libvirt sẽ tự động chỉ ra mà không cần khai báo qua file xml.
 - Mỗi bộ điều khiển có một tham số bắt buộc là `type` và `index`, các giá trị có thể chọn của `type` là: 'ide', 'fdc', 'scsi', 'sata', 'usb', 'ccid', 'virtio-serial' hoặc 'pci'. Trong khi đó `index` sẽ chỉ ra thứ tự ưu tiên.
@@ -179,30 +179,30 @@
 
 - Có một vài kiểu set up network ví dụ như Virtual network (type = network), Bridge to LAN (type = bridge), Userspace SLIRP stack (type=user). Ở đây tôi sẽ nói về Bridge to LAN.
 
-<img src="http://i.imgur.com/pDY2H6N.png">
+<img src="https://i.imgur.com/pDY2H6N.png">
 
 - `source` : tham số bắt buộc là "bridge":  tên bridge
 - `mac` : tham số bắt buộc là "address": địa chỉ mac
 - `model` : tham số bắt buộc là "type", các giá trị thường được sử dụng trong KVM: "ne2k_isa, i82551, i82557b, i82559er, ne2k_pci, pcnet, rtl8139, e1000, virtio"
 - Cài IP tĩnh:
 
-<img src="http://i.imgur.com/rAxciL5.png">
+<img src="https://i.imgur.com/rAxciL5.png">
 
 **Input devices**
 
-<img src="http://i.imgur.com/sKoRlrd.png">
+<img src="https://i.imgur.com/sKoRlrd.png">
 
 - Chỉ có 1 tham số bắt buộc đó là `type`, các giá trị có thể chọn là 'mouse', 'tablet',  'keyboard' hoặc 'passthrough'. Tham số `bus` để xác định chính xác thiết bị, các giá trị có thể chọn là "xen" (paravirtualized), "ps2", "usb" và "virtio".
 
 **Graphical framebuffers**
 
-<img src="http://i.imgur.com/UjBi3XA.png">
+<img src="https://i.imgur.com/UjBi3XA.png">
 
 - `graphic` : Thuộc tính bắc buộc là type, các giá trị có thể chọn : "sdl", "vnc", "spice", "rdp" và "desktop". Đối với mỗi loại sẽ có thêm những tham số được thêm vào. 
 
 **Video devices**
 
-<img src="http://i.imgur.com/cOWbMOJ.png">
+<img src="https://i.imgur.com/cOWbMOJ.png">
 
 - `model`  : Tham số bắt buộc là "type", các giá trị có thể lựa chọn là  "vga", "cirrus", "vmvga", "xen", "vbox", "qxl", "virtio" và "gop", tùy thuộc vào hypervisor.
   <ul>
@@ -214,23 +214,23 @@
 
 - serial port:
 
-<img src = "http://i.imgur.com/5UGmz09.png">
+<img src = "https://i.imgur.com/5UGmz09.png">
 
 - console:
 
 Nếu không có `target type` được chọn , mặc định trong KVM sẽ sử dụng `serial`.
 
-<img src="http://i.imgur.com/qCm9QGP.png">
+<img src="https://i.imgur.com/qCm9QGP.png">
 
 **Sound devices**
 
-<img sc="http://i.imgur.com/vRZvl1W.png">
+<img sc="https://i.imgur.com/vRZvl1W.png">
 
 - `sound` : tham số bắt buộc là `model`, các giá trị có thể chọn : 'es1370', 'sb16', 'ac97', 'ich6' và 'usb'
 
 **Memory balloon device**
 
-<img src="http://i.imgur.com/3ftef3k.png">
+<img src="https://i.imgur.com/3ftef3k.png">
 
 - Được thêm tự động, mặc định với KVM, `model` sẽ là `virtio`
 
@@ -301,7 +301,7 @@ Nếu không có `target type` được chọn , mặc định trong KVM sẽ s�
   
 - Đối với mã uuid, các bạn có thể download package `uuid` về rồi sử dụng câu lệnh `uuid` để generate đoạn mã uuid:
 
-<img src="http://i.imgur.com/PLdQUQX.png">
+<img src="https://i.imgur.com/PLdQUQX.png">
 
 - Ngoài ra, bạn cũng có thể tạo ra file xml bằng việc dump từ một máy ảo đang chạy bằng câu lệnh `virsh dumpxml vm01 > vm02.xml`
 
@@ -309,21 +309,21 @@ Nếu không có `target type` được chọn , mặc định trong KVM sẽ s�
 
 - Dùng câu lệnh `qemu-img create -f raw /var/lib/libvirt/images/thao.img 10G` để tạo ổ đĩa có dung lượng 10GB với định dạng raw.
 
-<img src="http://i.imgur.com/RIhCE6B.png">
+<img src="https://i.imgur.com/RIhCE6B.png">
 
 **Bước 3: Khởi tạo máy ảo**
 
 - Dùng câu lệnh `virsh start VMname.xml` để khởi tạo máy ảo:
 
-<img src="http://i.imgur.com/hDTPA0h.png">
+<img src="https://i.imgur.com/hDTPA0h.png">
 
 - Kiểm tra xem máy ảo đã được tạo hay chưa bằng câu lệnh `virsh list`
 
-<img src="http://i.imgur.com/L290umb.png">
+<img src="https://i.imgur.com/L290umb.png">
 
 - Sử dụng virt-manager để quản lí máy ảo:
 
-<img src="http://i.imgur.com/7wA7MUe.png">
+<img src="https://i.imgur.com/7wA7MUe.png">
 
 
 **Link tham khảo**

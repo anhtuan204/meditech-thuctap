@@ -2,11 +2,11 @@
 
 ## Mục Lục
 
-- [1.Giới thiệu về ảo hóa](#gioi-thieu)
+- [1.Giới thiệu](#gioi-thieu)
 
-- [2. Chức năng và lợi ích của ảo hóa](#chuc-nang)
+- [2. Chức năng và lợi ích](#chuc-nang)
 
-- [3. Lựa chọn công nghệ ảo hóa phù hợp](#cong-nghe)
+- [3. Phân loại các công nghệ ảo hóa](#cong-nghe)
 
 ------
 
@@ -29,7 +29,7 @@ Tuy nhiên vẫn còn đó một vài những hạn chế trong việc quản l�
 Trên mỗi máy ảo có hệ điều hành riêng giống như 01 máy chủ thật và được triển khai các môi trường, 
 ứng dụng khác nhau để phù hợp với hoạt động và mục đích của doanh nghiệp.
 
-<img src="https://i.imgur.com/vGNtn6N.jpg">
+<img src="https://i.imgur.com/vGNtn6N.jpg" >
 
 ### <a name="chuc-nang"> </a> 2. Chức năng và lợi ích của ảo hóa
 
@@ -60,5 +60,85 @@ Thêm vào đó, nó cũng giúp người dùng quản lí tốt hơn tài nguy�
  hiệu suất của từng máy chủ vật lý và của toàn hệ thống, đồng thời linh hoạt trong vấn đề mở rộng máy ảo, sao lưu, 
  dự phòng, di chuyển máy ảo.
 
- ### <a name = "cong-nghe"></a> 3. Lựa chọn công nghệ ảo hóa phù hợp
+### <a name = "cong-nghe"> </a> 3. Phân loại ảo hóa
+
 ![](https://i.imgur.com/Zw4DbaD.png)
+
+### Hypervisors vs Virtualization ###
+- Hypervisors (Virtual Machine Monitor VMM) Sử dụng để cài đặt virtualization
+- Điều khiển, quản lý, phân phối tài nguyên giữa các Quest OS
+ 
+![](https://i.imgur.com/2gFqmVb.png)
+
+##Phân loại Hypervisor:
+1. Native hoặc Bare Metal Hypervisor
+
+![](https://i.imgur.com/iqaQONM.png)
+ 
+- Không cần cài đặt trước HĐH
+- Trực tiếp kết nối tới tài nguyên vật lý
+- Performance tốt, ổn định.
+- Tuy nhiên, bị giới hạn do phụ thuộc vào phần cứng. (VSphere 6.0 khi cài đặt trên main + chip không đồng bộ có thể detect ra được)
+
+2. Hosted hypervisor
+
+![](https://i.imgur.com/eguWrsY.png)
+ 
+- Chạy dựa vào 1 HĐH chính (Tương tự 1 software trên OS)
+- Hypervisor sẽ giao tiếp với HĐH để gọi đến phần cứng
+- Tương thích với phần cứng tốt hơn
+- Giảm hiệu năng
+
+Khái niệm Virtualization
+![](https://i.imgur.com/43FerAZ.png)
+
+## 1. Software assisted full virtualization ( binary translation BT )
+
+Dựa vào bản dịch nhị phân để bẫy và ảo hóa việc thực thi các bộ chỉ dẫn ,không thể ảo hóa. Mô phỏng phần cứng bằng cách sử dụng bộ hướng dẫn phần mềm. Do bản dịch nhị phân (binary translation), nó thường gặp vấn đề hiệu suất.
+![](https://i.imgur.com/VNJgiLL.png)
+ 
+- VMware workstation (32Bit guests)
+- Virtual PC
+- VirtualBox (32-bit guests)
+- VMware Server
+
+## 2. Hardware-assisted virtualization (hardware virtual machine HVM) (VT)
+
+Hardware-assisted full virtualization không sử dụng binary translation mà trực tiếp giao tiếp với phần cứng bằng công nghệ ảo hóa đã được tích hợp trên bộ vi xử lý X86 kể từ năm 2005 (Intel VT-x và AMD-V). 
+
+![](https://i.imgur.com/uT3eJC0.png)
+
+Ví dụ các nền tảng ảo hóa hardware-assisted – Full virtualization với hypervisor type 1  (Bare metal )
+- VMware ESXi /ESX
+- Hyper-V
+- Xen
+- Parallels
+
+Nền tảng ảo hóa hardware-assisted – Full virtualization hypervisor type 2  (Hosted).
+- VMware Workstation  (64-bit )
+- Virtual Box (64-bit)
+- VMware Server (Retired )
+- KVM
+
+### 3. Paravirtualization:
+Paravirtualization hoạt động khác với Full virtualization. Nó không cần phải mô phỏng phần cứng cho các máy ảo. Các hypervisor được cài đặt trên một máy chủ vật lý và Quest OS được cài đặt vào môi trường. Các Quest OS này biết rằng nó đã được ảo hóa, không giống như Full virtualization (nơi Quest OS không biết rằng nó đã được ảo hóa).  Các Quest OS yêu cầu các phần mở rộng để thực hiện các cuộc gọi API tới hypervisor. Trong ảo hóa full, quest OS sẽ gọi phần cứng nhưng trong paravirtualization, quest OS sẽ trực tiếp giao tiếp với máy chủ (hypervisor) bằng cách sử dụng drivers.
+![](https://i.imgur.com/tGT1Tve.png)
+ 
+Đây là lisf của sản phẩm hỗ trợ paravirtualization.
+- Xen
+- IBM LPAR
+- Oracle VM cho SPARC (LDOM)
+- Oracle VM cho X86 (OVM)
+
+###	4. Hybrid Virtualization: ( Hardware Virtualized với PV Drivers )
+- Oracle VM for x86
+- Xen
+- VMware ESXi
+
+### 5.OS level Virtualization (Containerization)
+- Linux LCX
+- Docker
+- AIX WPAR
+
+##  Memory Virtualization
+##  I/O Virtualization
